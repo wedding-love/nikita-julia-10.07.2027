@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
-  <title>Наконец-то мы женимся | Свадебное приглашение</title>
+  <title>Юлия и Никита | Свадебное приглашение</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -906,8 +906,7 @@
       cursor: pointer;
     }
 
-    .radio-label input[type="radio"],
-    .drink-check input[type="checkbox"] {
+    .radio-label input[type="radio"] {
       appearance: none;
       -webkit-appearance: none;
       width: 22px;
@@ -935,41 +934,6 @@
       height: 12px;
       background-color: #fefad8;
       border-radius: 50%;
-    }
-
-    .drink-check input[type="checkbox"] {
-      border-radius: 3px;
-    }
-
-    .drink-check input[type="checkbox"]:checked {
-      background: transparent;
-      border-color: #fefad8;
-    }
-
-    .drink-check input[type="checkbox"]:checked::after {
-      content: '✓';
-      position: absolute;
-      top: 0px;
-      left: 4px;
-      font-size: 15px;
-      color: #fefad8;
-    }
-
-    .drinks-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .drink-check {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: "Bad Script", cursive;
-      font-weight: 400;
-      font-size: 1.05rem;
-      color: #fefad8;
-      cursor: pointer;
     }
 
     .submit-btn {
@@ -1163,7 +1127,6 @@
       .ref-image { width: 130px; height: 180px; }
       .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
-      .drinks-grid { grid-template-columns: 1fr; gap: 10px; }
       .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
       .final-container { gap: 22px; }
       .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
@@ -1340,10 +1303,10 @@
         <p>с нами наше свадебное торжество,</p>
         <p>которое состоится</p>
       </div>
-      <div class="big-date fade-up-item delay-2">26.08.2026</div>
+      <div class="big-date fade-up-item delay-2">10.07.2027</div>
     </div>
     <div class="calendar-image-wrapper fade-up-item delay-3">
-      <img src="календарь.png" alt="Календарь Август 2026" class="calendar-img" onerror="this.src='https://placehold.co/500x560/fefad8/c9a8cc?text=🗓️+26+АВГУСТА+2026'; this.onerror=null;">
+      <img src="календарь.png" alt="Календарь Июль 2027" class="calendar-img" onerror="this.src='https://placehold.co/500x560/fefad8/c9a8cc?text=🗓️+10+ИЮЛЯ+2027'; this.onerror=null;">
     </div>
   </section>
 
@@ -1353,10 +1316,10 @@
       <div class="location-label fade-up-item">Локация</div>
       <div class="location-photo-wrapper fade-up-item delay-1">
         <svg class="paper-clip" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 43C16.5 43 19.5 39.5 19.5 34V12.5C19.5 7.5 16 4 11.5 4C7 4 4 7.5 4 12.5V31.5C4 35 6 37.5 9 37.5C12 37.5 14 35 14 31.5V13C14 11 12.5 9.5 11 9.5C9.5 9.5 8.5 11 8.5 13V31C8.5 32 9 32.5 9.5 32.5C10 32.5 10.5 32 10.5 31V13C10.5 12.3 10.7 11.5 11 11.5C11.3 11.5 12 12.3 12 13V31.5C12 33.5 10.8 35.5 9 35.5C7.2 35.5 6 33.5 6 31.5V12.5C6 9 8.5 6 11.5 6C14.5 6 17.5 9 17.5 12.5V34C17.5 38 15 41 12 41C9 41 6.5 38 6.5 35V17C6.5 16.2 5.9 15.6 5.2 15.6C4.5 15.6 4 16.2 4 17V35C4 40 7.5 43 12 43Z" fill="#fefad8" stroke="#d4c4b8" stroke-width="0.6"/></svg>
-        <div class="location-img-container"><img src="локация.png" alt="Ресторан" class="location-img" onerror="this.src='https://placehold.co/800x600/fefad8/c9a8cc?text=🏰+Ресторан'; this.onerror=null;"></div>
+        <div class="location-img-container"><img src="локация.png" alt="Кафе Рандеву" class="location-img" onerror="this.src='https://placehold.co/800x600/fefad8/c9a8cc?text=🏰+Кафе+Рандеву'; this.onerror=null;"></div>
       </div>
-      <div class="location-name fade-up-item delay-2">Ресторан «Мари»</div>
-      <div class="location-address fade-up-item delay-3">Гродно, улица Советская, 15</div>
+      <div class="location-name fade-up-item delay-2">Кафе «Рандеву»</div>
+      <div class="location-address fade-up-item delay-3">ул. Мира, д. 10</div>
       <a href="#" class="location-btn fade-up-item delay-4" onclick="alert('Открывается карта...'); return false;">Показать на карте</a>
     </div>
   </section>
@@ -1369,23 +1332,7 @@
     <div class="timing-grid">
       <div class="timing-item fade-up-item delay-1">
         <div class="timing-time">14:00</div>
-        <div class="timing-desc">Сбор гостей <span>Встреча и размещение</span></div>
-      </div>
-      <div class="timing-item fade-up-item delay-2">
-        <div class="timing-time">15:00</div>
-        <div class="timing-desc">Торжественная церемония <span>Регистрация брака</span></div>
-      </div>
-      <div class="timing-item fade-up-item delay-3">
-        <div class="timing-time">16:30</div>
-        <div class="timing-desc">Свадебный банкет <span>Праздничный ужин</span></div>
-      </div>
-      <div class="timing-item fade-up-item delay-4">
-        <div class="timing-time">19:00</div>
-        <div class="timing-desc">Танцы и развлечения <span>Музыка, игры, фотосессия</span></div>
-      </div>
-      <div class="timing-item fade-up-item delay-5">
-        <div class="timing-time">23:00</div>
-        <div class="timing-desc">Фейерверк и завершение <span>Тёплые слова и прощание</span></div>
+        <div class="timing-desc">Сбор гостей</div>
       </div>
     </div>
   </section>
@@ -1396,7 +1343,7 @@
       <div class="dresscode-title fade-up-item delay-1">Дресс-код</div>
       <div class="white-rectangle fade-up-item delay-2">
         <img src="скотч.png" alt="скотч" class="tape-sticker" onerror="this.style.display='none';">
-        <div class="dresscode-text">Мы стараемся сделать праздник красивым и стильным! Будем очень рады, если вы поддержите дресс-код нашей свадьбы и выберете пастельные оттенки для своих нарядов.</div>
+        <div class="dresscode-text">Мы стараемся сделать праздник красивым и стильным! Будем очень рады, если вы поддержите дресс-код нашей свадьбы и выберете дофаминовые цвета: розовый, голубой и светло-жёлтые оттенки.</div>
         
         <div class="color-swatches">
           <div class="color-swatch">
@@ -1404,20 +1351,12 @@
             <span class="color-label">Розовый</span>
           </div>
           <div class="color-swatch">
-            <div class="color-square" style="background: #B5EAD7;"></div>
-            <span class="color-label">Мятный</span>
-          </div>
-          <div class="color-swatch">
             <div class="color-square" style="background: #C9E4FF;"></div>
             <span class="color-label">Голубой</span>
           </div>
           <div class="color-swatch">
-            <div class="color-square" style="background: #F7DC6F;"></div>
-            <span class="color-label">Лимонный</span>
-          </div>
-          <div class="color-swatch">
-            <div class="color-square" style="background: #E8D5B7;"></div>
-            <span class="color-label">Шампань</span>
+            <div class="color-square" style="background: #FFF3B0;"></div>
+            <span class="color-label">Светло-жёлтый</span>
           </div>
         </div>
 
@@ -1426,10 +1365,8 @@
           <div class="scroll-container">
             <div class="images-row">
               <img src="1.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/FFD1DC/3d2a3d?text=🌸';">
-              <img src="2.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/B5EAD7/3d2a3d?text=🌿';">
-              <img src="3.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/C9E4FF/3d2a3d?text=💎';">
-              <img src="4.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/F7DC6F/3d2a3d?text=🌼';">
-              <img src="5.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/E8D5B7/3d2a3d?text=🥂';">
+              <img src="2.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/C9E4FF/3d2a3d?text=💎';">
+              <img src="3.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/FFF3B0/3d2a3d?text=🌼';">
             </div>
           </div>
         </div>
@@ -1440,8 +1377,8 @@
   <!-- ЭКРАН 6: ПОЖЕЛАНИЯ -->
   <section class="screen screen-sixth">
     <div class="wishes-container">
-      <div class="wishes-title fade-up-item delay-1">Пожелания</div>
-      <div class="wishes-text fade-up-item delay-2">Можете не переживать по поводу подарка, мы будем благодарны вашим пожеланиям в конвертах! Многие считают важной деталью дарить на свадьбу цветы, но у нас дома не найдется столько ваз! Поэтому можете заменить цветы на любую альтернативу (по желанию). И помните, самый ценный подарок для нас – ваше присутствие!</div>
+      <div class="wishes-title fade-up-item delay-1">Подарки и пожелания</div>
+      <div class="wishes-text fade-up-item delay-2">Ваше присутствие — самый ценный подарок. Будем благодарны за конверт с тёплыми пожеланиями. Если хотите порадовать нас цветами, пожалуйста, замените их на что-то более практичное — книгу, вино или корм для приюта животных.</div>
       <div class="fade-up-item delay-3"><img src="подарок.png" alt="Подарок" class="gift-image" onerror="this.src='https://placehold.co/400x300/c9a8cc/fefad8?text=🎁';"></div>
     </div>
   </section>
@@ -1450,12 +1387,14 @@
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
-      <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 1 августа 2026. Это поможет нам в организации праздника!</div>
+      <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 10 июня 2027. Это поможет нам в организации праздника!</div>
 
-      <form class="final-form fade-up-item delay-3" id="guestForm">
+      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/xzerzedw" method="POST" accept-charset="UTF-8">
+        <input type="hidden" name="_subject" value="Свадебная анкета — Юлия и Никита">
+
         <div class="form-group">
           <label class="form-label">Имя и фамилия</label>
-          <input type="text" class="form-input" placeholder="" required>
+          <input type="text" class="form-input" name="name" placeholder="" required>
         </div>
 
         <div class="form-group">
@@ -1467,53 +1406,45 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Меню напитков (выберите предпочтения)</label>
-          <div class="drinks-grid">
-            <label class="drink-check"><input type="checkbox" value="игристое"> Игристое</label>
-            <label class="drink-check"><input type="checkbox" value="вино белое"> Вино белое</label>
-            <label class="drink-check"><input type="checkbox" value="вино красное"> Вино красное</label>
-            <label class="drink-check"><input type="checkbox" value="коньяк"> Коньяк</label>
-            <label class="drink-check"><input type="checkbox" value="виски"> Виски</label>
-            <label class="drink-check"><input type="checkbox" value="водка"> Водка</label>
-            <label class="drink-check"><input type="checkbox" value="не пью алкоголь"> Не пью алкоголь</label>
-          </div>
-        </div>
-
-        <div class="form-group">
           <label class="form-label">Аллергия / непереносимость продуктов (если есть)</label>
-          <textarea class="form-textarea" placeholder=""></textarea>
+          <textarea class="form-textarea" name="allergy" placeholder=""></textarea>
         </div>
 
-        <button type="button" class="submit-btn" onclick="submitForm()">Отправить</button>
+        <button type="submit" class="submit-btn">Отправить</button>
       </form>
 
       <!-- ЛЕНТА С ДАТОЙ -->
       <div class="date-marquee-wrapper fade-up-item delay-4">
         <div class="date-marquee">
           <div class="date-marquee-track">
-            <span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span><span>26.08.2026</span>
+            <span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span><span>10.07.2027</span>
           </div>
         </div>
       </div>
 
-      <!-- КОНТАКТЫ (часть общего блока) -->
+      <!-- КОНТАКТЫ -->
       <div class="final-contacts fade-up-item delay-5">
         <div class="final-contacts-title">Контакты</div>
         <div class="final-contacts-text">Если у вас возникли вопросы, свяжитесь с нами:</div>
         
         <div class="contacts-item">
-          <span class="contacts-label">Невеста</span>
-          <span class="contacts-number"><a href="tel:+375291234567">+375 (29) 123-45-67</a></span>
+          <span class="contacts-label">Жених</span>
+          <span class="contacts-number"><a href="tel:+79676235301">+7 (967) 623-53-01</a></span>
         </div>
         
         <div class="contacts-item">
-          <span class="contacts-label">Жених</span>
-          <span class="contacts-number"><a href="tel:+375297654321">+375 (29) 765-43-21</a></span>
+          <span class="contacts-label">Невеста</span>
+          <span class="contacts-number"><a href="tel:+79513743192">+7 (951) 374-31-92</a></span>
+        </div>
+
+        <div class="contacts-item">
+          <span class="contacts-label">Мама невесты</span>
+          <span class="contacts-number"><a href="tel:+79133830014">+7 (913) 383-00-14</a></span>
         </div>
 
         <div class="final-wishes" style="margin-top: 16px;">
           <div class="final-big">Мы вас очень ждём</div>
-          <div class="final-small">Ваши Антон и Евгения</div>
+          <div class="final-small">Ваши Юлия и Никита</div>
         </div>
       </div>
     </div>
@@ -1591,16 +1522,6 @@
     window.addEventListener('orientationchange', setAppHeight);
     setAppHeight();
   })();
-
-  function submitForm() {
-    const name = document.querySelector('.final-form .form-input')?.value;
-    const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
-    if (!name || !attendance) {
-      alert('Пожалуйста, заполните имя и выберите вариант присутствия');
-      return;
-    }
-    alert('Спасибо! Ваш ответ сохранён. Ждём вас на свадьбе!');
-  }
 </script>
 </body>
 </html>
