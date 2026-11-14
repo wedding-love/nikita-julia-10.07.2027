@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -642,13 +643,6 @@
       padding: 0 4px;
     }
 
-    .color-swatch {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
     .color-square {
       width: 54px;
       height: 54px;
@@ -660,15 +654,6 @@
     .color-square:hover {
       transform: scale(1.08);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    }
-
-    .color-label {
-      font-family: "Bad Script", cursive;
-      font-size: 0.75rem;
-      color: #3d2a3d;
-      opacity: 0.7;
-      text-align: center;
-      line-height: 1.2;
     }
 
     .references-wrapper {
@@ -690,27 +675,9 @@
       padding: 0 8px;
     }
 
-    .scroll-container {
+    .dresscode-ref-img {
       width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-
-    .scroll-container::-webkit-scrollbar { display: none; }
-
-    .images-row {
-      display: flex;
-      flex-wrap: nowrap;
-      width: max-content;
-    }
-
-    .ref-image {
-      width: 170px;
-      height: 230px;
-      object-fit: cover;
-      flex-shrink: 0;
+      height: auto;
       display: block;
     }
 
@@ -1034,12 +1001,12 @@
       .timing-item { padding: 12px 14px; gap: 10px; }
       .white-rectangle { padding: 22px 14px 0; }
       .tape-sticker { width: 55px; top: -28px; }
-      .ref-image { width: 130px; height: 180px; }
       .gift-image { width: min(90%, 280px); }
       .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; }
       .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
       .full-width-heart { max-width: 360px; padding: 0 8px; }
       .color-square { width: 44px; height: 44px; }
+      .color-swatches { gap: 12px; }
       .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
     }
 
@@ -1052,7 +1019,6 @@
       .screen-sixth { padding: 45px 22px 55px 22px; }
       .screen-final { padding: 45px 22px 55px 22px; }
       .location-photo-wrapper { max-width: 360px; }
-      .ref-image { width: 150px; height: 205px; }
       .calendar-image-wrapper { max-width: 380px; }
       .color-square { width: 48px; height: 48px; }
       .references-wrapper { margin-left: -22px; margin-right: -22px; width: calc(100% + 44px); }
@@ -1065,7 +1031,6 @@
         min-height: 95vh;
       }
       body { padding: 20px 0; }
-      .ref-image { width: 190px; height: 260px; }
       .gift-image { width: min(90%, 420px); }
       .screen-second { padding: 30px 32px 35px; }
       .screen-third { padding: 55px 32px; }
@@ -1177,29 +1142,16 @@
         <div class="dresscode-text">Мы стараемся сделать праздник красивым и стильным! Будем очень рады, если вы поддержите дресс-код нашей свадьбы и выберете дофаминовые цвета: розовый, голубой и светло-жёлтые оттенки.</div>
         
         <div class="color-swatches">
-          <div class="color-swatch">
-            <div class="color-square" style="background: #FFD1DC;"></div>
-            <span class="color-label">Розовый</span>
-          </div>
-          <div class="color-swatch">
-            <div class="color-square" style="background: #C9E4FF;"></div>
-            <span class="color-label">Голубой</span>
-          </div>
-          <div class="color-swatch">
-            <div class="color-square" style="background: #FFF3B0;"></div>
-            <span class="color-label">Светло-жёлтый</span>
-          </div>
+          <div class="color-square" style="background: #96b1cc;"></div>
+          <div class="color-square" style="background: #b8b882;"></div>
+          <div class="color-square" style="background: #eecc84;"></div>
+          <div class="color-square" style="background: #e2aaaf;"></div>
+          <div class="color-square" style="background: #c9b4c7;"></div>
         </div>
 
         <div class="references-wrapper">
           <div class="ref-subtitle">Примеры нарядов</div>
-          <div class="scroll-container">
-            <div class="images-row">
-              <img src="1.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/FFD1DC/3d2a3d?text=🌸';">
-              <img src="2.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/C9E4FF/3d2a3d?text=💎';">
-              <img src="3.jpg" class="ref-image" onerror="this.src='https://placehold.co/170x230/FFF3B0/3d2a3d?text=🌼';">
-            </div>
-          </div>
+          <img src="Изображение 16-Photoroom.png" alt="Примеры нарядов" class="dresscode-ref-img">
         </div>
       </div>
     </div>
@@ -1346,3 +1298,5 @@
 </script>
 </body>
 </html>
+
+    
