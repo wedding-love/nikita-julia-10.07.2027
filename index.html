@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -172,7 +171,6 @@
       min-height: auto;
     }
 
-    /* ============ ОБЪЕДИНЕННЫЙ БЛОК: АНКЕТА + КОНТАКТЫ ============ */
     .screen-final {
       background: linear-gradient(145deg, #c9a8cc 0%, #b088b3 100%);
       padding: 50px 28px 60px 28px;
@@ -301,7 +299,6 @@
       transform: translateY(0);
     }
 
-    /* ============ БЕГУЩАЯ СТРОКА "ВЫ ПРИГЛАШЕНЫ" ============ */
     .kids-marquee {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -337,15 +334,10 @@
     }
 
     @keyframes marqueeScroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    /* ============ ВТОРОЙ ЭКРАН: ПРИГЛАШЕНИЕ ============ */
     .invitation-content {
       display: flex;
       flex-direction: column;
@@ -408,7 +400,6 @@
       object-fit: contain;
     }
 
-    /* ============ ТРЕТИЙ ЭКРАН (ЛОКАЦИЯ) ============ */
     .location-content {
       display: flex;
       flex-direction: column;
@@ -482,7 +473,6 @@
       width: 100%;
       max-width: 420px;
       margin: 4px auto 0;
-      border-radius: 0;
       box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.3);
       background: transparent;
       padding: 0 8px;
@@ -495,7 +485,6 @@
 
     .location-img-container {
       width: 100%;
-      border-radius: 0;
       overflow: hidden;
       background: transparent;
     }
@@ -507,7 +496,6 @@
       object-fit: cover;
       aspect-ratio: 4 / 3;
       transition: transform 0.5s ease;
-      border-radius: 0;
       border: 3px solid rgba(255, 250, 216, 0.95);
       box-sizing: border-box;
       max-height: 50vh;
@@ -529,7 +517,6 @@
       pointer-events: none;
     }
 
-    /* ============ ЧЕТВЕРТЫЙ ЭКРАН: ТАЙМИНГ ============ */
     .timing-section-title {
       text-align: center;
       margin-bottom: 20px;
@@ -572,12 +559,6 @@
       transform: translateX(0);
     }
 
-    .timing-item:nth-child(1) { transition-delay: 0.1s; }
-    .timing-item:nth-child(2) { transition-delay: 0.2s; }
-    .timing-item:nth-child(3) { transition-delay: 0.3s; }
-    .timing-item:nth-child(4) { transition-delay: 0.4s; }
-    .timing-item:nth-child(5) { transition-delay: 0.5s; }
-
     .timing-time {
       font-family: "Playfair Display", serif;
       font-weight: 600;
@@ -595,16 +576,6 @@
       line-height: 1.3;
     }
 
-    .timing-desc span {
-      display: block;
-      font-size: clamp(0.8rem, 2.2vw, 0.95rem);
-      color: #999;
-      font-style: italic;
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-    }
-
-    /* ============ ПЯТЫЙ ЭКРАН: ДРЕСС-КОД ============ */
     .dresscode-container {
       width: 100%;
       display: flex;
@@ -635,7 +606,6 @@
       max-width: 480px;
       margin: 0 auto;
       padding: 32px 20px 0;
-      border-radius: 0;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
       overflow: hidden;
     }
@@ -685,7 +655,6 @@
       border-radius: 6px;
       border: 2px solid rgba(60, 42, 60, 0.12);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
     }
 
     .color-square:hover {
@@ -703,16 +672,11 @@
     }
 
     .references-wrapper {
-      width: 100%;
-      margin: 0;
-      padding: 0;
       background: linear-gradient(145deg, #c9a8cc 0%, #b088b3 100%);
       margin-left: -20px;
       margin-right: -20px;
       width: calc(100% + 40px);
       padding-top: 20px;
-      padding-bottom: 0;
-      margin-top: 0;
     }
 
     .ref-subtitle {
@@ -732,23 +696,14 @@
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      scroll-behavior: smooth;
-      padding: 0;
-      margin: 0;
     }
 
-    .scroll-container::-webkit-scrollbar {
-      display: none;
-    }
+    .scroll-container::-webkit-scrollbar { display: none; }
 
     .images-row {
       display: flex;
-      flex-direction: row;
       flex-wrap: nowrap;
       width: max-content;
-      gap: 0;
-      padding: 0;
-      margin: 0;
     }
 
     .ref-image {
@@ -757,21 +712,8 @@
       object-fit: cover;
       flex-shrink: 0;
       display: block;
-      border: none;
-      outline: none;
-      background: transparent;
-      margin: 0;
     }
 
-    .ref-image:first-child {
-      margin-left: 0;
-    }
-
-    .ref-image:last-child {
-      margin-right: 0;
-    }
-
-    /* ============ ШЕСТОЙ ЭКРАН: ПОЖЕЛАНИЯ ============ */
     .wishes-container {
       width: 100%;
       max-width: 500px;
@@ -812,7 +754,6 @@
       opacity: 0.95;
     }
 
-    /* ============ ОБЪЕДИНЕННЫЙ БЛОК: АНКЕТА + КОНТАКТЫ ============ */
     .final-container {
       width: 100%;
       max-width: 500px;
@@ -867,7 +808,7 @@
       letter-spacing: 0.5px;
     }
 
-    .form-input, .form-select, .form-textarea {
+    .form-input, .form-textarea {
       background: transparent;
       border: none;
       border-bottom: 1px solid rgba(255, 250, 216, 0.6);
@@ -877,11 +818,10 @@
       font-size: 1.1rem;
       color: #fefad8;
       outline: none;
-      transition: border-color 0.2s ease;
       width: 100%;
     }
 
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
+    .form-input:focus, .form-textarea:focus {
       border-bottom-color: #fefad8;
     }
 
@@ -917,13 +857,7 @@
       background: transparent;
       cursor: pointer;
       position: relative;
-      transition: all 0.2s ease;
       flex-shrink: 0;
-    }
-
-    .radio-label input[type="radio"]:checked {
-      border-color: #fefad8;
-      background: transparent;
     }
 
     .radio-label input[type="radio"]:checked::after {
@@ -949,7 +883,6 @@
       color: #c9a8cc;
       cursor: pointer;
       transition: all 0.3s ease;
-      width: auto;
       min-width: 220px;
       max-width: 300px;
       margin: 10px auto 0;
@@ -959,11 +892,9 @@
 
     .submit-btn:hover {
       background: #ffffff;
-      color: #c9a8cc;
       transform: scale(1.02);
     }
 
-    /* ============ КОНТАКТЫ (внутри общего блока) ============ */
     .final-contacts {
       width: 100%;
       display: flex;
@@ -1002,7 +933,6 @@
       align-items: center;
       gap: 2px;
       font-family: "Bad Script", cursive;
-      font-weight: 400;
       padding: 6px 16px;
       width: 100%;
       max-width: 320px;
@@ -1024,20 +954,16 @@
     .contacts-number a {
       color: #fefad8;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     .contacts-number a:hover {
-      color: #ffffff;
       text-decoration: underline;
     }
 
-    /* ============ ДАТА МАРКИ ============ */
     .date-marquee-wrapper {
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      position: relative;
       margin-top: 10px;
       margin-bottom: 4px;
       overflow: hidden;
@@ -1053,11 +979,8 @@
     .date-marquee-track {
       display: flex;
       white-space: nowrap;
-      will-change: transform;
       animation: marqueeScroll 50s linear infinite;
       width: max-content;
-      padding: 0;
-      margin: 0;
     }
 
     .date-marquee-track span {
@@ -1096,81 +1019,33 @@
       margin-top: 6px;
     }
 
-    /* ============ АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ ============ */
     @media (max-width: 480px) {
-      .screen-first {
-        margin-bottom: -4px;
-      }
-      .first-content {
-        padding: 3vh 14px 0;
-      }
-      .title-block {
-        margin-bottom: 10px;
-      }
+      .first-content { padding: 3vh 14px 0; }
+      .title-block { margin-bottom: 10px; }
       .dialog-container { gap: 6px; }
-      .dialog-area {
-        margin-bottom: 6px;
-      }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 20px 14px 25px; }
-      .invitation-content { gap: 12px; padding-top: 15px; }
       .screen-third { padding: 40px 16px; }
       .screen-fourth { padding: 35px 16px 45px; }
       .screen-fifth { padding: 40px 16px 30px; }
       .screen-sixth { padding: 40px 16px 50px 16px; }
       .screen-final { padding: 40px 16px 50px 16px; }
-      .location-img { border-width: 2px; }
-      .timing-section-title { margin-bottom: 14px; }
       .timing-item { padding: 12px 14px; gap: 10px; }
       .white-rectangle { padding: 22px 14px 0; }
       .tape-sticker { width: 55px; top: -28px; }
       .ref-image { width: 130px; height: 180px; }
-      .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
-      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
-      .final-container { gap: 22px; }
+      .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; }
       .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
-      .location-content { gap: 16px; }
-      .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
-      .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
-      .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
-      .kids-marquee { padding: 6px 0; }
-      .kids-marquee-track span { font-size: clamp(0.7rem, 2vw, 0.85rem); padding: 0 25px 0 0; }
-      .scroll-container { padding: 0; }
-      .images-row { padding: 0; }
       .full-width-heart { max-width: 360px; padding: 0 8px; }
-      .location-btn { padding: 12px 26px; font-size: 1rem; }
       .color-square { width: 44px; height: 44px; }
-      .color-swatches { gap: 12px; }
-      .color-label { font-size: 0.65rem; }
-      .references-wrapper { 
-        margin-left: -14px; 
-        margin-right: -14px; 
-        width: calc(100% + 28px); 
-      }
-      .final-form { gap: 16px; }
-      .hero-image-section {
-        padding: 0 12px 0;
-      }
-      .kids-image { max-height: none; }
-      .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
-      .contacts-item { padding: 6px 12px; }
-      .contacts-number { font-size: clamp(1rem, 3.8vw, 1.2rem); }
-      .contacts-label { font-size: clamp(0.75rem, 2.8vw, 0.9rem); }
-      .final-contacts { gap: 6px; padding-top: 6px; }
-      .final-contacts-title { font-size: clamp(1.5rem, 4.5vw, 1.8rem); }
+      .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .screen-first {
-        margin-bottom: -4px;
-      }
-      .first-content {
-        padding: 3.5vh 22px 0;
-      }
+      .first-content { padding: 3.5vh 22px 0; }
       .screen-second { padding: 25px 22px 28px; }
-      .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
       .screen-fourth { padding: 40px 22px 50px; }
       .screen-fifth { padding: 45px 22px 30px; }
@@ -1179,75 +1054,30 @@
       .location-photo-wrapper { max-width: 360px; }
       .ref-image { width: 150px; height: 205px; }
       .calendar-image-wrapper { max-width: 380px; }
-      .dresscode-container { padding: 0; }
       .color-square { width: 48px; height: 48px; }
-      .references-wrapper { 
-        margin-left: -22px; 
-        margin-right: -22px; 
-        width: calc(100% + 44px); 
-      }
-      .gift-image { width: min(90%, 340px); }
-      .submit-btn { margin-bottom: 12px; }
-      .final-container { gap: 26px; }
-      .full-width-heart { max-width: 400px; }
-      .kids-marquee-track span { font-size: clamp(0.8rem, 2.2vw, 0.95rem); }
-    }
-
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .screen-first {
-        margin-bottom: -4px;
-      }
-      .primary-title {
-        font-size: 5.5rem;
-      }
-      .dialog-text {
-        font-size: 1.4rem;
-      }
-      .location-photo-wrapper {
-        max-width: 450px;
-      }
-      .calendar-image-wrapper {
-        max-width: 450px;
-      }
-      .full-width-heart { max-width: 480px; }
+      .references-wrapper { margin-left: -22px; margin-right: -22px; width: calc(100% + 44px); }
     }
 
     @media (min-width: 768px) {
       .invitation-card { 
-        max-width: 620px; 
         box-shadow: 0 0 50px rgba(60, 42, 60, 0.05); 
         border-radius: 32px;
         min-height: 95vh;
       }
-      body { 
-        background: #fefad8; 
-        padding: 20px 0; 
-      }
+      body { padding: 20px 0; }
       .ref-image { width: 190px; height: 260px; }
       .gift-image { width: min(90%, 420px); }
       .screen-second { padding: 30px 32px 35px; }
-      .invitation-content { gap: 14px; padding-top: 20px; }
       .screen-third { padding: 55px 32px; }
       .screen-fourth { padding: 50px 32px 60px; }
       .screen-fifth { padding: 55px 32px 40px; }
       .screen-sixth { padding: 55px 32px 65px 32px; }
       .screen-final { padding: 50px 32px 60px 32px; }
-      .location-content { gap: 22px; }
-      .dresscode-container { gap: 24px; }
       .calendar-image-wrapper { max-width: 420px; }
-      .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
+      .submit-btn { min-width: 240px; padding: 18px 54px; }
       .color-square { width: 58px; height: 58px; }
-      .references-wrapper { 
-        margin-left: -32px; 
-        margin-right: -32px; 
-        width: calc(100% + 64px); 
-      }
+      .references-wrapper { margin-left: -32px; margin-right: -32px; width: calc(100% + 64px); }
       .full-width-heart { max-width: 520px; }
-      .screen-first {
-        margin-bottom: -5px;
-      }
-      .final-container { gap: 30px; }
-      .final-contacts { padding-top: 20px; }
     }
   </style>
 </head>
@@ -1270,7 +1100,7 @@
     </div>
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="14-Photoroom.png" alt="Юлия и Никита" class="kids-image" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👩‍❤️‍👨+Пара'; this.onerror=null;">
+        <img src="14%20Photoroom.png" alt="Юлия и Никита" class="kids-image">
       </div>
     </div>
     <div class="kids-marquee fade-up-item delay-4">
@@ -1307,7 +1137,7 @@
       <div class="big-date fade-up-item delay-2">10.07.2027</div>
     </div>
     <div class="calendar-image-wrapper fade-up-item delay-3">
-      <img src="15-Photoroom.png" alt="Календарь Июль 2027" class="calendar-img" onerror="this.src='https://placehold.co/500x560/fefad8/c9a8cc?text=🗓️+10+ИЮЛЯ+2027'; this.onerror=null;">
+      <img src="15%20Photoroom.png" alt="Календарь Июль 2027" class="calendar-img">
     </div>
   </section>
 
@@ -1317,7 +1147,7 @@
       <div class="location-label fade-up-item">Локация</div>
       <div class="location-photo-wrapper fade-up-item delay-1">
         <svg class="paper-clip" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 43C16.5 43 19.5 39.5 19.5 34V12.5C19.5 7.5 16 4 11.5 4C7 4 4 7.5 4 12.5V31.5C4 35 6 37.5 9 37.5C12 37.5 14 35 14 31.5V13C14 11 12.5 9.5 11 9.5C9.5 9.5 8.5 11 8.5 13V31C8.5 32 9 32.5 9.5 32.5C10 32.5 10.5 32 10.5 31V13C10.5 12.3 10.7 11.5 11 11.5C11.3 11.5 12 12.3 12 13V31.5C12 33.5 10.8 35.5 9 35.5C7.2 35.5 6 33.5 6 31.5V12.5C6 9 8.5 6 11.5 6C14.5 6 17.5 9 17.5 12.5V34C17.5 38 15 41 12 41C9 41 6.5 38 6.5 35V17C6.5 16.2 5.9 15.6 5.2 15.6C4.5 15.6 4 16.2 4 17V35C4 40 7.5 43 12 43Z" fill="#fefad8" stroke="#d4c4b8" stroke-width="0.6"/></svg>
-        <div class="location-img-container"><img src="локация.png" alt="Кафе Рандеву" class="location-img" onerror="this.src='https://placehold.co/800x600/fefad8/c9a8cc?text=🏰+Кафе+Рандеву'; this.onerror=null;"></div>
+        <div class="location-img-container"><img src="локация.png" alt="Кафе Рандеву" class="location-img"></div>
       </div>
       <div class="location-name fade-up-item delay-2">Кафе «Рандеву»</div>
       <div class="location-address fade-up-item delay-3">ул. Мира, д. 10</div>
@@ -1414,7 +1244,6 @@
         <button type="submit" class="submit-btn">Отправить</button>
       </form>
 
-      <!-- ЛЕНТА С ДАТОЙ -->
       <div class="date-marquee-wrapper fade-up-item delay-4">
         <div class="date-marquee">
           <div class="date-marquee-track">
@@ -1423,7 +1252,6 @@
         </div>
       </div>
 
-      <!-- КОНТАКТЫ -->
       <div class="final-contacts fade-up-item delay-5">
         <div class="final-contacts-title">Контакты</div>
         <div class="final-contacts-text">Если у вас возникли вопросы, свяжитесь с нами:</div>
@@ -1514,16 +1342,7 @@
 
     ensureMarquee('.kids-marquee', '.kids-marquee-track');
     ensureMarquee('.date-marquee', '.date-marquee-track', 8);
-
-    function setAppHeight() {
-      const doc = document.documentElement;
-      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-    }
-    window.addEventListener('resize', setAppHeight);
-    window.addEventListener('orientationchange', setAppHeight);
-    setAppHeight();
   })();
 </script>
 </body>
 </html>
-```
