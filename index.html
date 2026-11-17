@@ -636,15 +636,16 @@
     .color-swatches {
       display: flex;
       justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: clamp(4px, 2vw, 18px);
+      flex-wrap: nowrap;
       margin-bottom: 24px;
       padding: 0 4px;
     }
 
     .color-square {
-      width: 54px;
-      height: 54px;
+      width: clamp(30px, 8vw, 58px);
+      height: clamp(30px, 8vw, 58px);
+      flex-shrink: 0;
       border-radius: 6px;
       border: 2px solid rgba(60, 42, 60, 0.12);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1004,8 +1005,6 @@
       .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; }
       .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
       .full-width-heart { max-width: 360px; padding: 0 8px; }
-      .color-square { width: 44px; height: 44px; }
-      .color-swatches { gap: 12px; }
       .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
     }
 
@@ -1019,7 +1018,6 @@
       .screen-final { padding: 45px 22px 55px 22px; }
       .location-photo-wrapper { max-width: 360px; }
       .calendar-image-wrapper { max-width: 380px; }
-      .color-square { width: 48px; height: 48px; }
       .references-wrapper { margin-left: -22px; margin-right: -22px; width: calc(100% + 44px); }
     }
 
@@ -1039,7 +1037,6 @@
       .screen-final { padding: 50px 32px 60px 32px; }
       .calendar-image-wrapper { max-width: 420px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; }
-      .color-square { width: 58px; height: 58px; }
       .references-wrapper { margin-left: -32px; margin-right: -32px; width: calc(100% + 64px); }
       .full-width-heart { max-width: 520px; }
     }
@@ -1064,7 +1061,7 @@
     </div>
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="Изображение 14-Photoroom.png" alt="Юлия и Никита" class="kids-image">
+        <img src="Изображение 38-Photoroom.png" alt="Юлия и Никита" class="kids-image">
       </div>
     </div>
     <div class="kids-marquee fade-up-item delay-4">
@@ -1138,7 +1135,7 @@
       <div class="dresscode-title fade-up-item delay-1">Дресс-код</div>
       <div class="white-rectangle fade-up-item delay-2">
         <img src="скотч.png" alt="скотч" class="tape-sticker" onerror="this.style.display='none';">
-        <div class="dresscode-text">Мы стараемся сделать праздник красивым и стильным! Будем очень рады, если вы поддержите дресс-код нашей свадьбы и выберете дофаминовые цвета: розовый, голубой, светло-жёлтые и зелёные (шалфей) оттенки.</div>
+        <div class="dresscode-text">Мы стараемся сделать праздник красивым и стильным! Будем очень рады, если вы поддержите дресс-код нашей свадьбы и выберете дофаминовые оттенки: розовый, голубой, светло-жёлтый и зелёный (шалфей).</div>
         
         <div class="color-swatches">
           <div class="color-square" style="background: #96b1cc;"></div>
