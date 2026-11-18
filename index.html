@@ -1175,10 +1175,7 @@
         </svg>
       </button>
       <div class="music-text" id="musicLabel">Включить музыку</div>
-      <audio id="bgMusic" loop preload="auto">
-        <source src="music.mp3" type="audio/mpeg">
-        <source src="Баста - ЧК (Чистый Кайф).mp3" type="audio/mpeg">
-      </audio>
+      <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
     </div>
   </section>
 
@@ -1424,9 +1421,8 @@
         musicBtn.setAttribute('aria-label', 'Включить музыку');
       });
 
-      // Если браузер не смог загрузить ни один источник
       bgMusic.addEventListener('error', function() {
-        musicLabel.textContent = 'Файл музыки не найден';
+        musicLabel.textContent = 'Файл music.mp3 не найден';
       }, true);
     }
   })();
