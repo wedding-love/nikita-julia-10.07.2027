@@ -193,9 +193,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       width: 100%;
-      max-width: 320px;
+      max-width: 360px;
       margin: 0 auto;
     }
 
@@ -246,6 +246,8 @@
       letter-spacing: 1px;
       line-height: 1.3;
       text-align: left;
+      min-width: 160px;
+      transition: color 0.3s ease;
     }
 
     /* ============ ПЕРВЫЙ ЭКРАН ============ */
@@ -1078,6 +1080,7 @@
       .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
       .music-btn { width: 48px; height: 48px; }
       .music-btn svg { width: 20px; height: 20px; }
+      .music-text { min-width: 130px; font-size: 1rem; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
@@ -1135,7 +1138,7 @@
     </div>
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="Изображение 40-Photoroom.png" alt="Юлия и Никита" class="kids-image">
+        <img src="Изображение 41-Photoroom.png" alt="Юлия и Никита" class="kids-image">
       </div>
     </div>
     <div class="kids-marquee fade-up-item delay-4">
@@ -1171,10 +1174,10 @@
           <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
         </svg>
       </button>
-      <div class="music-text">Наша песня</div>
-      <audio id="bgMusic" loop preload="none">
+      <div class="music-text" id="musicLabel">Включить музыку</div>
+      <audio id="bgMusic" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
         <source src="Баста - ЧК (Чистый Кайф).mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
       </audio>
     </div>
   </section>
@@ -1388,27 +1391,43 @@
     // --- Музыкальный плеер ---
     const musicBtn = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
+    const musicLabel = document.getElementById('musicLabel');
 
-    if (musicBtn && bgMusic) {
+    if (musicBtn && bgMusic && musicLabel) {
       musicBtn.addEventListener('click', function() {
         if (bgMusic.paused) {
-          bgMusic.play().then(() => {
+          const playPromise = bgMusic.play();
+          if (playPromise !== undefined) {
+            playPromise.then(function() {
+              musicBtn.classList.add('playing');
+              musicLabel.textContent = 'Выключить музыку';
+              musicBtn.setAttribute('aria-label', 'Выключить музыку');
+            }).catch(function(err) {
+              console.warn('Не удалось воспроизвести аудио:', err);
+              musicLabel.textContent = 'Ошибка аудио (проверьте файл)';
+            });
+          } else {
             musicBtn.classList.add('playing');
-            musicBtn.setAttribute('aria-label', 'Выключить музыку');
-          }).catch(err => {
-            console.warn('Не удалось воспроизвести аудио:', err);
-          });
+            musicLabel.textContent = 'Выключить музыку';
+          }
         } else {
           bgMusic.pause();
           musicBtn.classList.remove('playing');
+          musicLabel.textContent = 'Включить музыку';
           musicBtn.setAttribute('aria-label', 'Включить музыку');
         }
       });
 
       bgMusic.addEventListener('ended', function() {
         musicBtn.classList.remove('playing');
+        musicLabel.textContent = 'Включить музыку';
         musicBtn.setAttribute('aria-label', 'Включить музыку');
       });
+
+      // Если браузер не смог загрузить ни один источник
+      bgMusic.addEventListener('error', function() {
+        musicLabel.textContent = 'Файл музыки не найден';
+      }, true);
     }
   })();
 </script>
