@@ -10,6 +10,9 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+  <!-- SDK Forminit -->
+  <script src="https://forminit.com/sdk.js" defer></script>
+
   <style>
     * {
       margin: 0;
@@ -77,7 +80,6 @@
       height: 0;
     }
 
-    /* ============ АНИМАЦИЯ ============ */
     .fade-up-item {
       opacity: 0;
       transform: translateY(40px);
@@ -179,7 +181,6 @@
       min-height: auto;
     }
 
-    /* ============ МУЗЫКАЛЬНЫЙ ПЛЕЕР ============ */
     .screen-music {
       background-color: #fefad8;
       padding: 20px 28px 25px;
@@ -250,7 +251,6 @@
       transition: color 0.3s ease;
     }
 
-    /* ============ ПЕРВЫЙ ЭКРАН ============ */
     .first-content {
       flex: 1;
       display: flex;
@@ -933,6 +933,23 @@
       transform: scale(1.02);
     }
 
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-success {
+      font-family: "Bad Script", cursive;
+      font-weight: 400;
+      font-size: clamp(1.15rem, 4.2vw, 1.5rem);
+      color: #fefad8;
+      text-align: center;
+      line-height: 1.7;
+      letter-spacing: 0.4px;
+      padding: 20px 8px;
+    }
+
     .final-contacts {
       width: 100%;
       display: flex;
@@ -1163,7 +1180,7 @@
     </div>
   </section>
 
-  <!-- МУЗЫКАЛЬНЫЙ ПЛЕЕР (после первого блока) -->
+  <!-- МУЗЫКАЛЬНЫЙ ПЛЕЕР -->
   <section class="screen screen-music">
     <div class="music-player">
       <button id="musicToggle" class="music-btn" aria-label="Включить музыку">
@@ -1256,35 +1273,43 @@
     </div>
   </section>
 
-  <!-- ОБЪЕДИНЕННЫЙ ФИНАЛЬНЫЙ БЛОК: АНКЕТА ГОСТЯ + КОНТАКТЫ -->
+  <!-- ФИНАЛЬНЫЙ БЛОК: АНКЕТА + КОНТАКТЫ -->
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
       <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 10 июня 2027. Это поможет нам в организации праздника!</div>
 
-      <form class="final-form fade-up-item delay-3" id="guestForm" action="https://formspree.io/f/xzerzedw" method="POST" accept-charset="UTF-8">
+      <form class="final-form fade-up-item delay-3" id="guestForm" 
+            action="https://forminit.com/f/guyv5axnyvw" 
+            method="POST" 
+            enctype="multipart/form-data" 
+            accept-charset="UTF-8">
         <input type="hidden" name="_subject" value="Свадебная анкета — Юлия и Никита">
 
         <div class="form-group">
-          <label class="form-label">Имя и фамилия</label>
-          <input type="text" class="form-input" name="name" placeholder="" required>
+          <label class="form-label" for="guestName">Имя и фамилия</label>
+          <input type="text" id="guestName" class="form-input" name="fi-sender-fullName" required>
         </div>
 
         <div class="form-group">
           <label class="form-label">Планируете ли присутствовать на торжестве?</label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="attendance" value="yes" required> Да, буду</label>
-            <label class="radio-label"><input type="radio" name="attendance" value="no"> К сожалению, нет</label>
+            <label class="radio-label"><input type="radio" name="fi-radio-attendance" value="Да, буду" required> Да, буду</label>
+            <label class="radio-label"><input type="radio" name="fi-radio-attendance" value="К сожалению, нет"> К сожалению, нет</label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Аллергия / непереносимость продуктов (если есть)</label>
-          <textarea class="form-textarea" name="allergy" placeholder=""></textarea>
+          <label class="form-label" for="guestAllergy">Аллергия / непереносимость продуктов (если есть)</label>
+          <textarea id="guestAllergy" class="form-textarea" name="fi-text-allergy"></textarea>
         </div>
 
         <button type="submit" class="submit-btn">Отправить</button>
       </form>
+
+      <div class="final-subtitle" id="formSuccess" style="display:none;">
+        Спасибо! Мы получили ваш ответ. До встречи на празднике!
+      </div>
 
       <div class="date-marquee-wrapper fade-up-item delay-4">
         <div class="date-marquee">
@@ -1426,6 +1451,48 @@
       }, true);
     }
   })();
+
+  // --- Форма Forminit ---
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('guestForm');
+    const success = document.getElementById('formSuccess');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      // Проверяем, что SDK загрузился
+      if (!window.Forminit || typeof window.Forminit.submit !== 'function') {
+        alert('Форма ещё загружается. Подождите пару секунд и попробуйте снова.');
+        return;
+      }
+
+      const btn = form.querySelector('.submit-btn');
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Отправляем...';
+
+      try {
+        const result = await window.Forminit.submit('guyv5axnyvw', new FormData(form));
+
+        // Forminit возвращает { error } — если ошибки нет, показываем благодарность
+        if (result && result.error) {
+          throw new Error(result.error.message || 'Ошибка отправки');
+        }
+
+        form.style.display = 'none';
+        if (success) {
+          success.style.display = 'block';
+          success.classList.add('revealed');
+        }
+      } catch (err) {
+        console.error('Forminit error:', err);
+        alert('Не удалось отправить форму. Проверьте соединение и попробуйте ещё раз.');
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+  });
 </script>
 </body>
 </html>
