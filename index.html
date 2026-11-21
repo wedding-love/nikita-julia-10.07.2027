@@ -10,8 +10,8 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-  <!-- SDK Forminit -->
-  <script src="https://forminit.com/sdk.js" defer></script>
+  <!-- ✅ SDK Forminit (правильный путь) -->
+  <script src="https://forminit.com/sdk/v1/forminit.js" defer></script>
 
   <style>
     * {
@@ -1279,11 +1279,7 @@
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
       <div class="final-subtitle fade-up-item delay-2">Пожалуйста, подтвердите своё присутствие до 10 июня 2027. Это поможет нам в организации праздника!</div>
 
-      <form class="final-form fade-up-item delay-3" id="guestForm" 
-            action="https://forminit.com/f/guyv5axnyvw" 
-            method="POST" 
-            enctype="multipart/form-data" 
-            accept-charset="UTF-8">
+      <form class="final-form fade-up-item delay-3" id="guestForm">
         <input type="hidden" name="_subject" value="Свадебная анкета — Юлия и Никита">
 
         <div class="form-group">
@@ -1447,25 +1443,28 @@
       });
 
       bgMusic.addEventListener('error', function() {
-        musicLabel.textContent = 'Файл музыка.mp3 не найден';
+        musicLabel.textContent = 'Файл музыки не найден';
       }, true);
     }
   })();
 
-  // --- Форма Forminit ---
+  // --- ✅ Отправка формы через Forminit SDK (без перехода на сайт) ---
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('guestForm');
     const success = document.getElementById('formSuccess');
     if (!form) return;
 
-    form.addEventListener('submit', async function(event) {
-      event.preventDefault();
+    // Проверяем, что SDK действительно загрузился
+    if (typeof Forminit === 'undefined') {
+      console.warn('Forminit SDK не загружен — проверьте путь к скрипту');
+      return;
+    }
 
-      // Проверяем, что SDK загрузился
-      if (!window.Forminit || typeof window.Forminit.submit !== 'function') {
-        alert('Форма ещё загружается. Подождите пару секунд и попробуйте снова.');
-        return;
-      }
+    // Создаём экземпляр класса Forminit
+    const forminit = new Forminit();
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Отменяем переход на сайт Forminit
 
       const btn = form.querySelector('.submit-btn');
       const originalText = btn.textContent;
@@ -1473,17 +1472,19 @@
       btn.textContent = 'Отправляем...';
 
       try {
-        const result = await window.Forminit.submit('guyv5axnyvw', new FormData(form));
+        // Вызываем submit у экземпляра forminit
+        const { error } = await forminit.submit('guyv5axnyvw', new FormData(form));
 
-        // Forminit возвращает { error } — если ошибки нет, показываем благодарность
-        if (result && result.error) {
-          throw new Error(result.error.message || 'Ошибка отправки');
-        }
-
-        form.style.display = 'none';
-        if (success) {
-          success.style.display = 'block';
-          success.classList.add('revealed');
+        if (!error) {
+          form.style.display = 'none';
+          if (success) {
+            success.style.display = 'block';
+            success.classList.add('revealed');
+          }
+        } else {
+          alert('Ошибка при отправке. Попробуйте ещё раз.');
+          btn.disabled = false;
+          btn.textContent = originalText;
         }
       } catch (err) {
         console.error('Forminit error:', err);
